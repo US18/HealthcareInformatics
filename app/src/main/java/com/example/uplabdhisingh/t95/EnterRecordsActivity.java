@@ -28,16 +28,6 @@ public class EnterRecordsActivity extends AppCompatActivity
         btnNext = (Button) findViewById(R.id.btn_next);
 
         gestureDetectorCompat = new GestureDetectorCompat(this,new MyGestureListener());
-
-      /*  btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentToViewRecords = new Intent(EnterRecordsActivity.this,ViewRecordsActivity.class);
-                startActivity(intentToViewRecords);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-            }
-        }); */
-
         enterRecordsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

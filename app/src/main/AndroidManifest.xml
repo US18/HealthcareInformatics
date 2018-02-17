@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.uplabdhisingh.t95">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +27,14 @@
         <activity android:name=".EnterRecordDetails" />
         <activity android:name=".RecordDetailsActivity" />
         <activity android:name=".EmployeeWorklogDetails" />
-        <activity android:name=".LodgeComplaintDetails"></activity>
+        <activity android:name=".LodgeComplaintDetails" />
+        <activity android:name=".ViewRecordDetailsActivity"/>
+
+        <provider
+            android:authorities="com.example.uplabdhisingh.t95"
+            android:name="com.example.uplabdhisingh.t95.data.HealthcareContentProvider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -36,5 +36,12 @@ public class EnterRecordDetails extends AppCompatActivity {
         });
 
 
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToRecordDetails = new Intent(EnterRecordDetails.this,RecordDetailsActivity.class);
+                startActivity(intentToRecordDetails);
+            }
+        });
     }
 }

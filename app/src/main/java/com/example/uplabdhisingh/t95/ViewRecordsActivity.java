@@ -1,34 +1,37 @@
 package com.example.uplabdhisingh.t95;
 
+import android.content.Intent;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
-public class ViewRecordsActivity extends AppCompatActivity {
+public class ViewRecordsActivity extends AppCompatActivity
+{
 
     private GestureDetectorCompat gestureDetectorCompat;
-    Button btnPre;
+    ImageView viewRecordsImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_records);
 
-        btnPre = (Button) findViewById(R.id.btn_pre);
+        viewRecordsImageView = (ImageView) findViewById(R.id.iv_view_records);
         gestureDetectorCompat = new GestureDetectorCompat(this,new ViewRecordsGestureListener());
 
-    /*    btnPre.setOnClickListener(new View.OnClickListener() {
+
+        viewRecordsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                Intent intentToViewRecordsDetail = new Intent(ViewRecordsActivity.this,ViewRecordDetailsActivity.class);
+                startActivity(intentToViewRecordsDetail);
             }
-        }); */
-
+        });
     }
 
     @Override

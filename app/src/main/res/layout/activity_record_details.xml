@@ -1,156 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    tools:context="com.example.uplabdhisingh.t95.RecordDetailsActivity"
-    >
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.example.uplabdhisingh.t95.RecordDetailsActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/edt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:hint="Select Date..."
-            />
+            android:hint="Select Date..." />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/edt_time"
-            android:layout_margin="15dp"
-            android:hint="Select Time..."
-            android:layout_toRightOf="@id/edt_date"
-            />
-        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/edt_pincode"
-            android:layout_below="@id/edt_date"
-            android:hint="Enter Location PINCODE"
             android:layout_margin="15dp"
-            android:maxLength="6"
-            />
+            android:layout_toRightOf="@id/edt_date"
+            android:hint="Select Time..." />
+
+        <EditText
+            android:id="@+id/edt_pincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_date"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Enter Location PINCODE"
+            android:maxLength="6" />
 
         <RadioGroup
+            android:id="@+id/radio_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radio_categories"
             android:layout_below="@+id/edt_pincode"
-            android:layout_margin="15dp"
-            >
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6 months - 3 year Child"
                 android:id="@+id/rb_six_month_childs"
-                />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3 year - 6 year Child"
+                android:onClick="onRadioButtonSelected"
+                android:text="6 months - 3 year Child" />
+
+            <RadioButton
                 android:id="@+id/rb_three_years_child"
-                />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pregnant Women"
+                android:onClick="onRadioButtonSelected"
+                android:text="3 year - 6 year Child" />
+
+            <RadioButton
                 android:id="@+id/rb_pregnant_women"
-                />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lactating Mothers"
+                android:onClick="onRadioButtonSelected"
+                android:text="Pregnant Women" />
+
+            <RadioButton
                 android:id="@+id/rb_lactating_mothers"
-                />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="11-14 year Girls"
+                android:onClick="onRadioButtonSelected"
+                android:text="Lactating Mothers" />
+
+            <RadioButton
                 android:id="@+id/rb_eleven_years_girls"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonSelected"
+                android:text="11-14 year Girls" />
         </RadioGroup>
 
         <TextView
+            android:id="@+id/tv_distributed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_distributed"
-            android:text="Things Distributed"
             android:layout_below="@+id/radio_categories"
-            android:layout_marginBottom="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:textSize="23sp"
-            />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cb_food"
-            android:layout_below="@id/tv_distributed"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="FOOD"
-            />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cb_clothes"
-            android:layout_below="@id/cb_food"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="CLOTHES"
-            />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cb_vaccine"
-            android:layout_below="@id/cb_clothes"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="VACCINATIONS"
-            />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cb_other"
-            android:layout_below="@id/cb_vaccine"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="OTHERS"
-            />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_others"
-            android:layout_below="@+id/cb_other"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:hint="OTHER DISTRIBUTED THINGS"
-            />
+            android:text="Things Distributed :"
+            android:textSize="23sp" />
 
-        <Button
-            android:id="@+id/btn_add_details"
+        <TextView
+            android:id="@+id/tv_food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/edt_others"
-            android:layout_toEndOf="@+id/edt_others"
-            android:layout_toRightOf="@+id/edt_others"
-            android:textSize="10sp"
-            android:text="Add Details" />
+            android:layout_below="@id/tv_distributed"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="FOOD" />
+
+    <TextView
+        android:id="@+id/tv_clothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_food"
+        android:layout_alignStart="@+id/tv_food"
+        android:layout_below="@+id/tv_food"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="CLOTHES" />
+
+    <TextView
+        android:id="@+id/tv_vaccine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_food"
+        android:layout_alignStart="@+id/tv_food"
+        android:layout_below="@+id/tv_clothes"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="VACINNATIONS" />
+
+    <TextView
+        android:id="@+id/tv_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_food"
+        android:layout_alignStart="@+id/tv_food"
+        android:layout_below="@+id/tv_vaccine"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="OTHERS" />
+
+    <EditText
+        android:id="@+id/edt_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_distributed"
+        android:layout_marginRight="10dp"
+        android:hint="Y/N" />
+
+    <EditText
+        android:id="@+id/edt_clothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edt_food"
+        android:layout_alignStart="@+id/edt_food"
+        android:layout_below="@+id/tv_food"
+        android:hint="Y/N" />
+
+    <EditText
+        android:id="@+id/edt_vaccine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_vaccine"
+        android:layout_alignBottom="@+id/tv_vaccine"
+        android:layout_alignLeft="@+id/edt_clothes"
+        android:layout_alignStart="@+id/edt_clothes"
+        android:hint="Y/N" />
+
+    <EditText
+        android:id="@+id/edt_others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_other"
+        android:layout_alignBottom="@+id/tv_other"
+        android:layout_alignEnd="@+id/btn_add_details"
+        android:layout_alignRight="@+id/btn_add_details"
+        android:hint="Other" />
+
+    <Button
+        android:id="@+id/btn_add_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="addDetailsToRecord"
+        android:text="Add Details"
+        android:textSize="10sp" />
 
     </RelativeLayout>
 
-
-</ScrollView>
 
