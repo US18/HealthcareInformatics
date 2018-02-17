@@ -26,6 +26,7 @@ public class RecordDetailsActivity extends AppCompatActivity
     EditText edtDate;
     EditText edtTime;
     EditText edtPincode;
+    EditText edtAadhar;
     RadioGroup rgCategories;
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
@@ -41,6 +42,7 @@ public class RecordDetailsActivity extends AppCompatActivity
         edtDate = (EditText) findViewById(R.id.edt_date);
         edtTime = (EditText) findViewById(R.id.edt_time);
         edtFood = (EditText) findViewById(R.id.edt_food);
+        edtAadhar = (EditText) findViewById(R.id.edt_aadhar_number);
         edtClothes = (EditText) findViewById(R.id.edt_clothes);
         edtVaccine = (EditText) findViewById(R.id.edt_vaccine);
         edtOthers = (EditText) findViewById(R.id.edt_others);
@@ -116,6 +118,7 @@ public class RecordDetailsActivity extends AppCompatActivity
         String date = edtDate.getText().toString();
         String time = edtTime.getText().toString();
         String pincode = edtPincode.getText().toString();
+        String aadhar = edtAadhar.getText().toString();
         String food = edtFood.getText().toString();
         String clothes = edtClothes.getText().toString();
         String vaccine = edtVaccine.getText().toString();
@@ -123,6 +126,7 @@ public class RecordDetailsActivity extends AppCompatActivity
 
         if (edtDate.getText().length() == 0 ||
                 edtTime.getText().length() == 0 ||
+                edtAadhar.getText().length() == 0 ||
                 edtPincode.getText().length() == 0 ||
                 edtFood.getText().length() == 0 || edtClothes.getText().length()==0 ||
                 edtVaccine.getText().length() == 0 || edtOthers.getText().length() == 0||
@@ -135,6 +139,7 @@ public class RecordDetailsActivity extends AppCompatActivity
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_DATE, date);
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_TIME, time);
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_PINCODE, pincode);
+        contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_AADHAR,aadhar);
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_CATEGORIES, categoryRadio);
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_FOOD, food);
         contentValues.put(HealthCareContract.HealthCareEntry.COLUMN_CLOTHES, clothes);

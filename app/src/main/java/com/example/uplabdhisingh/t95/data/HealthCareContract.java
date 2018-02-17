@@ -22,6 +22,7 @@ public class HealthCareContract
 
         public static final String COLUMN_DATE = "date";
         public static final String COLUMN_TIME = "time";
+        public static final String COLUMN_AADHAR = "aadhar";
         public static final String COLUMN_PINCODE = "pincode";
         public static final String COLUMN_CATEGORIES = "category"; //radiogroups
         public static final String COLUMN_FOOD = "food";  //checkboxes
